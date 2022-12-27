@@ -1,0 +1,46 @@
+###
+get http://localhost:8080/todos/?status=TO%20DO/
+
+###
+get http://localhost:8080/todos/?priority=HIGH/
+
+###
+get http://localhost:8080/todos/?priority=HIGH&status=IN%20PROGRESS/
+
+###
+get http://localhost:8080/todos/?search_q=Play/
+
+###
+get http://localhost:8080/todos/:todoId/
+
+### 
+post http://localhost:8080/todos/
+Content-Type: application/json
+
+{
+  "id": 10,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+
+###
+put http://localhost:8080/todos/10/
+Content-Type: application/json
+
+{ "status": "DONE" }
+
+###
+put http://localhost:8080/todos/10/
+Content-Type: application/json
+
+{ "priority": "HIGH" }
+
+###
+put http://localhost:8080/todos/10/
+Content-Type: application/json
+
+{ "todo": "Some task" }
+
+###
+delete http://localhost:8080/todos/5/
